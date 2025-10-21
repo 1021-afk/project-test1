@@ -43,7 +43,7 @@
 
                 if (password_verify($this->password, $hashedPassword)) {
                     $_SESSION['userid'] = $row['id'];
-                    header("Location: welcome.php");
+                     return true;
                 } else {
                     return false; // Passwords do not match
                 }
@@ -70,7 +70,7 @@
             session_start();
             unset($_SESSION['userid']);
             // session_destroy();
-            header("Location: signin.php");
+            header("Location: log in.php");
             exit;
         }
     }
